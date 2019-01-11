@@ -1,0 +1,48 @@
+
+.image-picker {
+	width: 120px;
+	height: 120px;
+	border: 1px solid red;
+	display: flex;/*保证图片居中*/
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	overflow: hidden;
+	box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+	position: relative;
+}
+.image-picker:hover {
+	cursor: pointer;
+}
+.image-picker img {
+	max-width: 100%;/*保证图片不会撑出父容器*/
+	max-height: 100%;
+	vertical-align: top;/*可以去除img和其父容器之间下面的空隙*/
+}
+.image-picker input[type=file]{
+	position: absolute;
+	background: red;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	z-index: 1;
+	cursor: pointer;
+}
+.image-picker .mask{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0,0,0,0.5);
+	color: white;
+	
+}
+.image-picker:hover .mask {
+	display: flex;
+}

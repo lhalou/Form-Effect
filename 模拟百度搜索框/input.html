@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>美化input标签</title>
+	<script src = "//at.alicdn.com/t/font_1009418_reo60soe9qo.js">
+	</script>
+	<link type = "text/css" rel = "styleSheet" href = "input.css">
+</head>
+<body>
+	<div class = "wrapper">
+		<span class = "input-wrapper">
+			<input id = "keyword" type = "text" autocomplete="off">
+			<span class = "float-div">		
+				<svg class = "icon">
+					<use xlink:href = "#icon-mic"></use>				
+				</svg>
+				<span class = "split-line"></span>
+				<svg class = "icon">
+					<use xlink:href = "#icon-camera"></use>				
+				</svg>
+			</span>			
+		</span>
+		<button>百度一下</button>
+		<ul id = "suggestion" class = "suggestion">
+			<li>选项1</li>
+			<li>选项2</li>
+			<li>选项3</li>
+			<li>选项4</li>
+		</ul>
+	</div>
+	<script>
+		keyword.oninput = function(e){
+			if(keyword.value){
+				suggestion.classList.add('active');
+			}else{
+				suggestion.classList.remove('active');
+			}
+		};
+	</script>
+</body>
+</html>
