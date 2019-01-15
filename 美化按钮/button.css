@@ -1,0 +1,43 @@
+.frank-button {
+	box-sizing: border-box;/*当宽度确定后，button的宽度就不会受border影响*/
+	display: inline-block;/*对于a标签*/
+	background: none;
+	height: 36px;
+	line-height: 36px;/*按钮其实可以自动居中文字，防止用a标签*/
+	padding: 0 16px;
+	text-decoration: none;/*对于a标签*/
+	font-size: 14px;
+	border: none;/*去掉button默认的border*/
+	transition: all 0.5s;
+	position: relative;
+	background: green;
+	overflow: hidden;
+	z-index: 0;
+}
+.frank-button:hover {
+	background: #E5E5E5;
+}
+.frank-button:focus {
+	outline: none;
+	background: #E5E5E5;/*用户用Tab键*/
+}
+.frank-button > .circle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border: 1px solid red;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: red;
+	margin-left: -5px;
+	margin-top: -5px;
+	transition: all 0.5s;
+	visibility: hidden;
+	pointer-events: none;
+	z-index: -1;
+}
+.frank-button:hover > .circle.active{
+	-webkit-transform: scale(10);
+	visibility: visible;
+}

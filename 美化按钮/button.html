@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>button按钮美化</title>
+	<link  type = "text/css" rel = "stylesheet" href = "button.css">
+</head>
+<body>
+	<button id = "b" class = "frank-button">
+			<span class = "circle"></span>
+			按钮
+	</button>
+	<script>
+		b.onclick = function(){
+			b.querySelector('.circle').classList.add('active')
+		}	
+		b.querySelector('.circle').addEventListener('transitionend',function(){
+			b.querySelector('.circle').classList.remove('active')
+		}) 
+	</script>		
+</body>
+</html>
